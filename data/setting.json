@@ -1,0 +1,12 @@
+{
+	"settings" : {
+		"pointsize" : 96,
+		"fill" : "black"
+	},
+	"boxes": {
+		"name" : {
+			"x":100,
+			"y":100
+		}
+	}
+}
