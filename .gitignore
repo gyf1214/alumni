@@ -1,3 +1,9 @@
 tmp/*
 !tmp/.keep
 
+data/files/*
+!data/files/.keep
+data/index
+data/setting
+data/model.jpg
+

@@ -7,7 +7,7 @@ module Alumni
 		Levels.each do |l|
 			self.instance_eval %{
 				def #{l} sth
-					Out.puts "[#{l} \#{Time.now}]\#{sth}" if @on.include? #{l}
+					Out.puts "[#{l} \#{Time.now}]\#{sth}" if @on.include? :#{l}
 				end
 			}
 		end

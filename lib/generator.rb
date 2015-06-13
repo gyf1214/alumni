@@ -7,28 +7,30 @@ module Alumni
 		include Options
 
 		def initialize ops
-			require_ops ops, [:src, :settings, :path]
+			Logger.debug "New generator, options: #{ops.inspect}"
 
-			@image = Image.read ops[:src]
+			require_ops ops, [:src, :settings]
+
+			@image = Image.read(ops[:src]).first
 			@brush = Draw.new
 
 			settings = ops[:settings]
 			@global = settings[:settings]
 			@boxes = settings[:boxes]
 
-			@path = ops[:path]
 			@spec = ops[:spec]
 		end
 
-		def do! texts
+		def do! texts, path
 			Logger.info "Start generate #{@path}"
 
 			if @spec.nil?
-				render settings[:boxes]
+				render @boxes, texts
 			else
-				Logger.debug "Specifically render for #{@path}"
+				Logger.debug "Specifically render: { #{@spec} }"
 				self.instance_eval @spec
 			end
+			save path
 
 			Logger.info "Finish generate #{@path}"
 		end
@@ -48,7 +50,7 @@ module Alumni
 		end
 
 		def textout txt, x, y, font = {}
-			Logger.debug "Textout for #{@path}"
+			Logger.debug "Textout: #{txt.inspect}"
 
 			@brush.annotate @image, 0, 0, x, y, txt do
 				font.each do |k, v|
@@ -57,15 +59,18 @@ module Alumni
 			end
 		end
 
-		def render boxs, texts
-			Logger.debug "Normally render for #{@path}"
+		def render boxes, texts
+			Logger.debug "Normally render"
 
-			boxs.each do |k, box|
-				setting = @global.merge box[:settings]
+			boxes.each do |k, box|
+				spec_setting = box[:settings] || {}
+				setting = @global.merge spec_setting
 				width = box[:width] || 0
 				lines = line texts[k], width
+
+				Logger.debug "Print section: #{k}, #{lines.size} line(s)"
 				lines.each do |l|
-					textout l, box[:x], box[:y], settings	
+					textout l, box[:x], box[:y], setting
 				end
 			end
 		end
@@ -73,7 +78,7 @@ module Alumni
 		def save path
 			Logger.debug "Save to #{path}"
 
-			img.write path
+			@image.write path
 		end
 	end
 end
