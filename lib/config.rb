@@ -13,7 +13,7 @@ module Alumni
 			Index = File.expand_path 'index', Path
 			Setting = File.expand_path 'setting', Path
 			Model = File.expand_path 'model.jpg', Common::Public
-			Files = File.expand_path 'files', Path
+			Files = File.expand_path 'files/', Path
 		end
 
 		module Assets

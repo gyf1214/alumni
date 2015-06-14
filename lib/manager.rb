@@ -60,6 +60,16 @@ module Alumni
 			Logger.info "Finish task #{name} in #{Time.now - last}s"
 		end
 
+		def upload name, src
+			Logger.info "Upload: #{name}"
+			last = Time.now
+			path = File.expand_path hash(name), Files
+			File.open path, "wb" do |tar|
+				tar.write src.read
+			end
+			Logger.info "Upload #{name} in #{Time.now - last}s"
+		end
+
 		def boxes
 			@setting[:boxes].dup
 		end

@@ -1,7 +1,7 @@
-.cell
+.cell.main
 	%image{:src => '/model.jpg'}
 	%form{:method => 'post', :action => '/', :id => 'form'}
-		= input "ID", 60, 20, "SHS ID(B201XXXXXX)..."
+		= input_box "ID", 60, 20, "SHS ID(B201XXXXXX)..."
 		.right
 			%a.btn{:href => '#', :id => 'submit'}Save
 		= boxes setting

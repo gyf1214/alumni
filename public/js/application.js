@@ -4,4 +4,9 @@ $(document).ready(function () {
 			$("#form").submit();
 		}
 	});
+	$("#file_submit").click(function () {
+		if ($("#ID").val() != "" && $("#file").val() != "") {
+			$("#form").submit();
+		}
+	});
 });

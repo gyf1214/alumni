@@ -1,0 +1,16 @@
+.cell
+	.box
+		%img{:src => "/model.jpg"}
+	.box
+		%h1
+			How to...
+		%h2
+			1.Download the model left.(optional)
+		%h2
+			2.Finish it yourself.(Photoshop, etc.)
+		%h2
+			3.Upload below!
+		%form{:method => 'post', :action => 'diy', :id => 'form', :enctype =>"multipart/form-data"}
+			= input "ID", "SHS ID(B201XXXXXX)..."
+			%input.typical{:type => 'file', :id => 'file', :name => 'file'}
+			%a.btn{:href => '#', :id => 'file_submit'} Save

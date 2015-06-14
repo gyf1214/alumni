@@ -25,7 +25,19 @@ module Alumni
 		end
 
 		get '/diy' do
-			haml :unfinished
+			haml :diy
+		end
+
+		post '/diy' do
+			outs = params
+			require_ops outs, ['ID']
+			name = outs['ID']
+			unless params[:file] and (tempfile = params[:file][:tempfile]) and (filename = params[:file][:filename])
+				raise "No file uploaded!"
+			end
+
+			Manager.upload name, params[:file][:tempfile]
+			haml :thx
 		end
 
 		not_found do

@@ -8,13 +8,17 @@ module Alumni
 			%{<script type="text/javascript" src="#{path}"></script>}
 		end
 
-		def input name, x, y, placeholder = name
+		def input_box name, x, y, placeholder = name
 			%{<input class="box" type="text" name="#{name}" id="#{name}" placeholder="#{placeholder}" style="left:#{x}px;top:#{y}px"/>}
+		end
+
+		def input name, placeholder = name
+			%{<input class="typical" type="text" name="#{name}" id="#{name}" placeholder="#{placeholder}"/>}
 		end
 
 		def boxes setting
 			outs = setting.map do |(k, box)|
-				input k, box[:x], box[:y]
+				input_box k, box[:x], box[:y]
 			end
 			outs.join '\n'
 		end
