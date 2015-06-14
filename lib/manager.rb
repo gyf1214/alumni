@@ -1,12 +1,9 @@
 require 'digest'
+require_rel 'config'
 
 module Alumni
 	module Manager
-		Path = 'data'
-		Index = File.expand_path('index', Path)
-		Setting = File.expand_path('setting', Path)
-		Model = File.expand_path('model.jpg', Path)
-		Files = File.expand_path('files', Path)
+		include Config::Manager
 
 		module_function
 

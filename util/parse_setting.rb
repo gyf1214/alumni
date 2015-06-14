@@ -1,7 +1,8 @@
 require './bootstrap'
 
 include Alumni
-path = ARGV[1] || 'data/setting.json'
+include Alumni::Config::Assets
+path = ARGV[1] || Setting
 settings = JSON.parse File.read(path)
 outs = {}
 
