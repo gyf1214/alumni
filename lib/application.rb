@@ -10,7 +10,8 @@ module Alumni
 		end
 
 		get '/alumni' do
-			haml :alumni
+			setting = Manager.boxes
+			haml :alumni, locals: {setting: setting}
 		end
 	end
 end

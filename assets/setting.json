@@ -1,7 +1,8 @@
 {
 	"settings" : {
-		"pointsize" : 96,
-		"fill" : "black"
+		"pointsize" : 30,
+		"fill" : "#414e57",
+		"font" : "public/youyuan.ttf"
 	},
 	"boxes": {
 		"name" : {

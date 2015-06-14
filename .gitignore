@@ -4,6 +4,8 @@ tmp/*
 data/*
 !data/files/.keep
 
-public/css/*
+public/*
 !public/css/.keep
+!public/js
+
 

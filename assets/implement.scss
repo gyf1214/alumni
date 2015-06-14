@@ -1,3 +1,10 @@
+@font-face {
+	font-family: '幼圆';
+	font-style: normal;
+	font-weight: 400;
+	src: url('/youyuan.ttf') format('truetype');
+}
+
 html {
 	background: $background;
 }
@@ -17,41 +24,53 @@ p, pre, h1, h2, h3, h4, h5 {
 }
 
 a {
-	color: $a-color;
+	color: $blue;
 	text-decoration: none;
 	&:hover, &:focus {
-		color: $a-color-h;
+		color: lighten($blue, 10%);
 		text-decoration: underline;
 	}
 }
 
 .hero, h1 {
-	font-size: $hero-size;
-	line-height: $line-height;
-	margin-bottom: $hero-bottom;
+	font-size: 2.5em;
+	line-height: 1.5em;
+	margin-bottom: 0.6em;
 }
 
 .btn {
-	background: $btn-background;
-	border-radius: $btn-radius;
-	margin-bottom: $btn-bottom;
-	margin-right: $btn-right;
-	padding: 0 $btn-side;
-	font-size: $btn-size;
-	line-height: $btn-height;
-	color: $btn-color;
+	background: transparent
+				linear-gradient($blue, darken($blue, 15%))
+				repeat scroll;
+	border-radius: $radius;
+	box-shadow: 0px -1px 0px darken($blue, 30%) inset,
+				0px 2px 3px rgba(0, 0, 0, 0.3);
+
+	margin-bottom: 24px;
+	margin-right: 10px;
+	padding: 0 20px;
+
+	font-size: 1.25em;
+	line-height: 42px;
+	color: $pure;
+
 	display: inline-block;
-	box-shadow: $btn-shadow;
 
 	&:hover, &:focus {
-		color: $btn_color;
-		background: $btn-background-h;
+		background: transparent
+					linear-gradient(lighten($blue, 10%), $blue)
+					repeat scroll;
+
+		color: $pure;
 		text-decoration: none;
 	}
 
 	&:active {
-		color: $btn_color;
-		background: $btn-background-a;
+		background: transparent
+					linear-gradient(darken($blue, 10%), darken($blue, 25%))
+					repeat scroll;
+
+		color: $pure;
 	}
 }
 
@@ -60,11 +79,28 @@ a {
 }
 
 .cell {
-	margin: $cell-margin;
-	width: $cell-width;
-	max-width: $cell-max;
+	margin: 0 auto;
+	width: 960px;
+	position: relative;
+
+	img {
+		position: absolute;
+	}
+
+	input {
+		font-size: 30px;
+		line-height: 1em;
+		border: 0px none;
+		background: transparent;
+		position: absolute;
+		font-family:  $chinese;
+		color: $fore;
+		width: 1000px;
+	}
+
+
 }
 
 .single {
-	padding-top: $single-top;
+	padding-top: 100px;
 }

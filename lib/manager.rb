@@ -59,5 +59,9 @@ module Alumni
 			@gen.do! texts, path
 			Logger.info "Finish task #{name} in #{Time.now - last}s"
 		end
+
+		def boxes
+			@setting[:boxes].dup
+		end
 	end
 end
