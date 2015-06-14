@@ -1,32 +1,44 @@
 //color
+$pure:				#FFF;
 $white:				#EAEAE1;
 $black:				#3E3E29;
 $red:				#EC6961;
 $blue:				#849EA2;
 
 //basic
-$font:				"Open Sans","Segoe UI","Tahoma","Microsoft YaHei","微软雅黑";
+$font:				"PTSans","Arial","Helvetica","sans-serif";
 $text-size:			16px;
 $text-color:		$black;
-$radius:			10px;
+$radius:			5px;
 $line-height:		1.5em;
+$background:		$white;
 
 //inline styles
 
+//link
+$a-color:			$blue;
+$a-color-h:			lighten($blue, 10%);
+
 //button
-$btn-backgroud:		transparent linear-gradient($red, darken($red, 10%)) repeat scroll;
+$btn-background:	transparent linear-gradient($blue, darken($blue, 15%)) repeat scroll;
+$btn-background-h:	transparent linear-gradient(lighten($blue, 10%), $blue) repeat scroll;
+$btn-background-a:	transparent linear-gradient(darken($blue, 10%), darken($blue, 25%)) repeat scroll;
+$btn-shadow:		0px -1px 0px darken($blue, 30%) inset, 0px 2px 3px rgba(0, 0, 0, 0.3);
 $btn-radius:		$radius;
 $btn-bottom:		24px;
 $btn-right:			10px;
+$btn-side:			20px;
+$btn-color:			$pure;
+$btn-size:			1.25em;
+$btn-height:		42px;
 
 //hero
 $hero-size:			2.5em;
-$hero-botton:		0.6em;
+$hero-bottom:		0.6em;
 
 //cell
 $cell-margin:		0px auto;
-$cell-width:		90%;
-$cell-max:			1000px;
+$cell-width:		960px;
 
 //single
-$padding-top:		100px;
+$single-top:		100px;

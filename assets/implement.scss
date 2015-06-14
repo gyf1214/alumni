@@ -1,0 +1,70 @@
+html {
+	background: $background;
+}
+
+body {
+	font-family: $font;
+	margin: 0;
+	padding: 0;
+	color: $text-color;
+	font-size: $text-size;
+	line-height: $line-height;
+}
+
+p, pre, h1, h2, h3, h4, h5 {
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	color: $a-color;
+	text-decoration: none;
+	&:hover, &:focus {
+		color: $a-color-h;
+		text-decoration: underline;
+	}
+}
+
+.hero, h1 {
+	font-size: $hero-size;
+	line-height: $line-height;
+	margin-bottom: $hero-bottom;
+}
+
+.btn {
+	background: $btn-background;
+	border-radius: $btn-radius;
+	margin-bottom: $btn-bottom;
+	margin-right: $btn-right;
+	padding: 0 $btn-side;
+	font-size: $btn-size;
+	line-height: $btn-height;
+	color: $btn-color;
+	display: inline-block;
+	box-shadow: $btn-shadow;
+
+	&:hover, &:focus {
+		color: $btn_color;
+		background: $btn-background-h;
+		text-decoration: none;
+	}
+
+	&:active {
+		color: $btn_color;
+		background: $btn-background-a;
+	}
+}
+
+.center {
+	text-align: center;
+}
+
+.cell {
+	margin: $cell-margin;
+	width: $cell-width;
+	max-width: $cell-max;
+}
+
+.single {
+	padding-top: $single-top;
+}
