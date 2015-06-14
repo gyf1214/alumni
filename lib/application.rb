@@ -5,8 +5,12 @@ module Alumni
 		helpers Helpers
 		set :public_folder, 'public'
 
-		get '/alumni' do
+		get '/' do
 			haml :index	
+		end
+
+		get '/alumni' do
+			haml :alumni
 		end
 	end
 end
