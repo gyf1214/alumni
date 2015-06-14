@@ -56,6 +56,8 @@ module Alumni
 				font.each do |k, v|
 					self.send "#{k}=", v
 				end
+
+				self.gravity = NorthWestGravity
 			end
 		end
 
