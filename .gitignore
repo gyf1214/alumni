@@ -1,9 +1,9 @@
 tmp/*
 !tmp/.keep
 
-data/files/*
+data/*
 !data/files/.keep
-data/index
-data/setting
-data/model.jpg
+
+public/css/*
+!public/css/.keep
 

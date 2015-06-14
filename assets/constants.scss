@@ -1,0 +1,32 @@
+//color
+$white:				#EAEAE1;
+$black:				#3E3E29;
+$red:				#EC6961;
+$blue:				#849EA2;
+
+//basic
+$font:				"Open Sans","Segoe UI","Tahoma","Microsoft YaHei","微软雅黑";
+$text-size:			16px;
+$text-color:		$black;
+$radius:			10px;
+$line-height:		1.5em;
+
+//inline styles
+
+//button
+$btn-backgroud:		transparent linear-gradient($red, darken($red, 10%)) repeat scroll;
+$btn-radius:		$radius;
+$btn-bottom:		24px;
+$btn-right:			10px;
+
+//hero
+$hero-size:			2.5em;
+$hero-botton:		0.6em;
+
+//cell
+$cell-margin:		0px auto;
+$cell-width:		90%;
+$cell-max:			1000px;
+
+//single
+$padding-top:		100px;
