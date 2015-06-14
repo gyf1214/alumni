@@ -11,7 +11,7 @@ module Alumni
 
 			require_ops ops, [:src, :settings]
 
-			@image = Image.read(ops[:src]).first
+			@src = Image.read(ops[:src]).first
 			@brush = Draw.new
 
 			settings = ops[:settings]
@@ -24,6 +24,7 @@ module Alumni
 		def do! texts, path
 			Logger.info "Start generate #{@path}"
 
+			@image = @src.clone
 			if @spec.nil?
 				render @boxes, texts
 			else

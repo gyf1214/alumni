@@ -8,8 +8,8 @@ module Alumni
 			%{<script type="text/javascript" src="#{path}"></script>}
 		end
 
-		def input name, x, y
-			%{<input type="text" name="#{name}" id="#{name}" placeholder="#{name}" style="left:#{x}px;top:#{y}px"/>}
+		def input name, x, y, placeholder = name
+			%{<input class="box" type="text" name="#{name}" id="#{name}" placeholder="#{placeholder}" style="left:#{x}px;top:#{y}px"/>}
 		end
 
 		def boxes setting
