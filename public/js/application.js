@@ -9,6 +9,7 @@ $(document).ready(function () {
 			$("#form").submit();
 		}
 	});
+	$("#ID").addClass("long");
 	$("#address").addClass("long");
 	$("#hobby").addClass("long");
 });

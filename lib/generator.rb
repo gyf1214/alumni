@@ -38,15 +38,37 @@ module Alumni
 
 		private
 
+		def char_width ch
+			pac = ch.unpack "c*"
+			pac.size > 1 ? 2 : 1
+		end
+
+		def slice_line txt, width
+			outs = ""
+			loop do
+				break if txt.empty?
+				ch = txt.slice! 0
+				w = char_width ch
+				break if width < w
+				width -= w
+				outs << ch
+			end
+			outs
+		end
+
 		def line text, width
 			lines = text.split "\n"
 			outs = Array.new
 			lines.each do |l|
-				while l.size > width and width > 0
-					Logger.debug "Line #{outs.size}: #{l}"
-					outs.push l.slice!(0, width)
+				if width > 0
+					until l.empty?
+						outs.push slice_line(l, width)
+						Logger.debug "Line #{outs.size}: #{outs.last}"
+					end
+				else
+					outs.push l
+					Logger.debug "Line #{outs.size}: #{outs.last}"
 				end
-				outs.push l
 			end
 			outs
 		end
