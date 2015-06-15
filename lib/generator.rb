@@ -42,7 +42,8 @@ module Alumni
 			lines = text.split "\n"
 			outs = Array.new
 			lines.each do |l|
-				while lines.size > width and width > 0
+				while l.size > width and width > 0
+					Logger.debug "Line #{outs.size}: #{l}"
 					outs.push l.slice!(0, width)
 				end
 				outs.push l
@@ -72,8 +73,10 @@ module Alumni
 				lines = line texts[k], width
 
 				Logger.debug "Print section: #{k}, #{lines.size} line(s)"
+				y = box[:y]
 				lines.each do |l|
-					textout l, box[:x], box[:y], setting
+					textout l, box[:x], y, setting
+					y += setting[:pointsize]
 				end
 			end
 		end

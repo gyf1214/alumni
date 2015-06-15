@@ -99,15 +99,20 @@ h2 {
 		z-index: -100;
 	}
 
-	input.box {
+	input.box, textarea.box {
 		font-size: 30px;
-		line-height: 1.2em;
-		border: 0px none;
+		line-height: 1em;
+		#border: 0px none;
 		background: transparent;
 		position: absolute;
 		font-family:  $chinese;
 		color: $fore;
-		width: 1000px;
+		width: 250px;
+		resize: none;
+
+		&.long {
+			width: 500px;
+		}
 	}
 
 	.right {

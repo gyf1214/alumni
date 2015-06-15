@@ -11,9 +11,9 @@ module Alumni
 		end
 
 		get '/alumni' do
-			#setting = Manager.boxes
-			#haml :alumni, locals: {setting: setting}
-			haml :unfinished
+			setting = Manager.boxes
+			haml :alumni, locals: {setting: setting}
+			#haml :unfinished
 		end
 
 		post '/' do

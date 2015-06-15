@@ -9,4 +9,6 @@ $(document).ready(function () {
 			$("#form").submit();
 		}
 	});
+	$("#address").addClass("long");
+	$("#hobby").addClass("long");
 });
