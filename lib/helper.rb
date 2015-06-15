@@ -20,7 +20,7 @@ module Alumni
 			outs = setting.map do |(k, box)|
 				input_box k, box[:x], box[:y]
 			end
-			outs.join '\n'
+			outs.join "\n"
 		end
 	end
 end
