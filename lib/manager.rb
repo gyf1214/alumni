@@ -9,10 +9,14 @@ module Alumni
 
 		def load
 			Logger.info "Load setting"
-			File.open(Setting, "r") do |file|
-				@setting = Marshal.load file
+			if File.exist? Setting
+				File.open(Setting, "r") do |file|
+					@setting = Marshal.load file
+				end
+			else
+				Logger.warn "Setting not exist, create"
+				@setting = {}
 			end
-			
 
 			Logger.info "Load index"
 			if File.exist? Index
@@ -20,10 +24,10 @@ module Alumni
 					@index = Marshal.load file
 				end
 			else
-				Logger.warn "Index File not exist, create"
+				Logger.warn "Index not exist, create"
 				@index = {}
-				sync
 			end
+			sync
 
 			@gen = Generator.new src: Model, settings: @setting
 
@@ -35,6 +39,12 @@ module Alumni
 			File.open(Index, "w") do |file|
 				Marshal.dump @index, file	
 			end
+
+			Logger.info "Synchrognize setting"
+			File.open(Setting, "w") do |file|
+				Marshal.dump @setting, file	
+			end
+
 			Logger.info "Synchrognize finished"
 		end
 
