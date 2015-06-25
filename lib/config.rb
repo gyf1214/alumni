@@ -25,5 +25,14 @@ module Alumni
 
 			Setting = File.expand_path 'setting.json', Path
 		end
+
+		module Unicorn
+			Path = Common::Temp
+
+			Log = File.expand_path 'application.log', Path
+			Err = File.expand_path 'error.log', Path
+			Pid = File.expand_path 'application.pid', Path
+			Sock = File.expand_path 'application.sock', Path
+		end
 	end
 end
