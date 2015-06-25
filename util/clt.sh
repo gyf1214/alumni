@@ -10,8 +10,12 @@ case "$1" in
 	restart)
 	kill -USR2 `cat tmp/application.pid`
 	;;
+	asset)
+	ruby util/parse_setting.rb
+	ruby util/asset.rb
+	;;
 	*)
-	echo "Usage: clt.sh {start | stop | restart}" >&2
+	echo "Usage: clt.sh {start | stop | restart | asset}" >&2
 	exit 3
 	;;
 esac
