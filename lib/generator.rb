@@ -47,11 +47,10 @@ module Alumni
 			outs = ""
 			loop do
 				break if txt.empty?
-				ch = txt.slice! 0
-				w = char_width ch
+				w = char_width txt[0]
 				break if width < w
 				width -= w
-				outs << ch
+				outs << txt.slice!(0)
 			end
 			outs
 		end
