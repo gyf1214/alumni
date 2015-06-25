@@ -7,29 +7,27 @@ Ruby >=2.0.0
 ImageMagick (with dev libs) >= 6.4.9
 
 ## Deployment
-Use Bundler to install all the gems required.
+Use Bundler to install all the gems required:
 
-  $ Bundle install
+    $ Bundle install
   
-Checkout the deploy branch for a quick deployment, or deploy yourself.
-  
-The `util/clt.sh` shell is provided to control the unicorn server.
+Checkout the deploy branch for a quick deployment, or deploy yourself:
 
-  #compile asset files
+    $ git checkout deploy
   
-  $ util/clt.sh asset
-  
-  #start the server
-  
-  $ util/clt.sh start
-  
-  #stop the server
-  
-  $ util/clt.sh stop
-  
-  #reload the server
-  
-  $ util/clt.sh restart
+The `util/clt.sh` shell is provided to control the unicorn server:
+
+    #compile asset files
+    $ util/clt.sh asset
+    
+    #start the server
+    $ util/clt.sh start
+    
+    #stop the server
+    $ util/clt.sh stop
+    
+    #reload the server
+    $ util/clt.sh restart
   
 ## Unicorn Setting
 A default `unicorn.rb` is provided in the deploy branch.
