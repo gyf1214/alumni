@@ -5,10 +5,10 @@ case "$1" in
 	unicorn -c unicorn.rb -D
 	;;
 	stop)
-	kill -QUIT 'cat tmp/application.pid'
+	kill -QUIT `cat tmp/application.pid`
 	;;
 	restart)
-	kill -USR2 'cat tmp/application.pid'
+	kill -USR2 `cat tmp/application.pid`
 	;;
 	*)
 	echo "Usage: clt.sh {start | stop | restart}" >&2

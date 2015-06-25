@@ -28,6 +28,7 @@ module Alumni
 
 		module Unicorn
 			Path = Common::Temp
+			Root = Common::Path
 
 			Log = File.expand_path 'application.log', Path
 			Err = File.expand_path 'error.log', Path

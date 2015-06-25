@@ -2,16 +2,14 @@ require './lib/config'
 
 user 'gyf', 'gyf'
 
-include Alumni::Config::Unicorn
-
 worker_processes 2
-working_directory Root
+working_directory Alumni::Config::Unicorn::Root
 timeout 30
 
-listen Sock, backlog: 1024
-pid Pid
-stdout_path Log
-stderr_path Err
+listen Alumni::Config::Unicorn::Sock, backlog: 1024
+pid Alumni::Config::Unicorn::Pid
+stdout_path Alumni::Config::Unicorn::Log
+stderr_path Alumni::Config::Unicorn::Err
 
 preload_app true
 
