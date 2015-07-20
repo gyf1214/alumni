@@ -33,7 +33,7 @@ module Alumni
 			Log = File.expand_path 'application.log', Path
 			Err = File.expand_path 'error.log', Path
 			Pid = File.expand_path 'application.pid', Path
-			Sock = File.expand_path 'application.sock', Path
+			Sock = File.expand_path 'application.sock', '/var/run/ruby'
 		end
 	end
 end
