@@ -3,7 +3,7 @@ require 'fileutils'
 
 include Alumni
 Manager.files.each do |k, v|
-	Logger.info "Dump files for #{k}, #{v.size} versions"
+	Alumni::Logger.info "Dump files for #{k}, #{v.size} versions"
 	dir = File.expand_path k, Manager::Dump
 	Dir.mkdir dir unless File.exist? dir
 
@@ -13,7 +13,7 @@ Manager.files.each do |k, v|
 		if File.exist? path
 			FileUtils.cp path, dest
 		else
-			Logger.warn "Skip #{name} version: #{index}. Source not found!"
+			Alumni::Logger.warn "Skip #{name} version: #{index}. Source not found!"
 		end
 	end
 end
