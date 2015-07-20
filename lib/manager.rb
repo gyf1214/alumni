@@ -83,5 +83,9 @@ module Alumni
 		def boxes
 			@setting[:boxes].dup
 		end
+
+		def files
+			@index.dup
+		end
 	end
 end

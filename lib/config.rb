@@ -14,6 +14,7 @@ module Alumni
 			Setting = File.expand_path 'setting', Path
 			Model = File.expand_path 'model.jpg', Common::Public
 			Files = File.expand_path 'files/', Path
+			Dump = File.expand_path 'dump/', Path
 		end
 
 		module Assets
