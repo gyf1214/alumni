@@ -3,6 +3,7 @@ tmp/*
 
 data/*
 !data/files/.keep
+!data/dump/.keep
 
 public/*
 !public/css/.keep
